@@ -1,0 +1,21 @@
+@import "normalize.css";
+
+/* CSS 초기 설정 */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* navbar 상단 고정했기 때문에 */
+body {
+    padding-top: 80px;
+}

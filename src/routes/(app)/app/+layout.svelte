@@ -1,21 +1,23 @@
-<slot/>
+<script>
+    import Header from "$lib/components/+Header.svelte";
+</script>
+
+<div class="wrapper">
+    <Header isLogin={false}/>
+    <div class="contents">
+        <slot/>
+    </div>
+<!--    <div class="footer">-->
+<!--    </div>-->
+</div>
+
 
 <style>
-    @import "normalize.css";
-
-    /* CSS 초기 설정 */
-    *, *::before, *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+    .wrapper {
+        /*border: 1px solid red;*/
     }
-
-    ul, ol {
-        list-style: none;
+    .contents {
+        /*border: 1px solid blue;*/
+        padding: 0 200px;
     }
-
-    a {
-        text-decoration: none;
-    }
-
 </style>
