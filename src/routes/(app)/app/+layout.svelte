@@ -1,23 +1,23 @@
 <script>
-    import Header from "$lib/components/+Header.svelte";
+    import Header from "$lib/components/Header.svelte";
 </script>
 
 <div class="wrapper">
-    <Header isLogin={false}/>
-    <div class="contents">
+    <!-- Navbar -->
+    <Header isLogin={true}/>
+    <!-- //Navbar -->
+
+    <!-- Content -->
+    <div class="content">
         <slot/>
     </div>
-<!--    <div class="footer">-->
-<!--    </div>-->
+    <!-- //Content -->
 </div>
 
-
 <style>
-    .wrapper {
-        /*border: 1px solid red;*/
-    }
-    .contents {
-        /*border: 1px solid blue;*/
-        padding: 0 200px;
+    /* Content */
+    .content {
+        /* navbar 상단 고정했기 때문에 */
+        margin-top: 80px;
     }
 </style>

@@ -9,7 +9,10 @@
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"strict": true,
-		"moduleResolution": "bundler"
+		"moduleResolution": "bundler",
+		// 빨간줄 처리
+		"noImplicitAny": false,
+//		"allowImportingTsExtensions": true,
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

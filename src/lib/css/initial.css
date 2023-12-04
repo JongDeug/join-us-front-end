@@ -14,8 +14,3 @@ ul, ol {
 a {
     text-decoration: none;
 }
-
-/* navbar 상단 고정했기 때문에 */
-body {
-    padding-top: 80px;
-}

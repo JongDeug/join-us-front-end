@@ -1,33 +1,40 @@
-<div class="container">
-    <form class="form">
-        <div class="title">Welcome,<br><span>have a nice day 😁</span></div>
+<div class="inner-content">
+    <form class="login-form">
+        <div class="title">Login</div>
+        <div class="greeting">Welcome,<br><span>have a nice day 😁</span></div>
         <input class="input" name="id" placeholder="Id" type="id">
         <input class="input" name="password" placeholder="Password" type="password">
         <div class="sign-up">
             <a href="#">아이디가 없으신가요?</a>
         </div>
-        <button class="button-confirm">확인</button>
+        <button class="confirm-btn">확인</button>
     </form>
 </div>
 
 <style lang="scss">
-  .container {
-    border: 1px solid blue;
+  .inner-content{
     display: flex;
     justify-content: center;
     align-items: center;
 
+    padding-top: 8%;
     //why?
-    height: 100vh;
+    //height: 100vh;
 
-    .form {
-      --input-focus: #2d8cf0;
-      --font-color: #323232;
-      --font-color-sub: #666;
-      --bg-color: beige;
-      --main-color: black;
+    .login-form {
+      /* Title */
+      .title {
+        width: 100%;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 600;
+        text-decoration: underline;
+        margin-bottom: 10px;
+        //color: #323232;
+      }
+
       padding: 20px;
-      background: lightblue;
+      background: white;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -35,46 +42,47 @@
       justify-content: center;
       gap: 20px;
       border-radius: 5px;
-      border: 2px solid var(--main-color);
-      box-shadow: 4px 4px var(--main-color);
+      border: 2px solid black;
+      box-shadow: 4px 4px black;
       width: 500px;
 
-      .title {
-        color: var(--font-color);
+      /* Greeting */
+      .greeting {
         font-weight: 900;
         font-size: 20px;
         margin-bottom: 25px;
 
         span {
-          color: var(--font-color-sub);
+          color: var(--font-light);
           font-weight: 600;
           font-size: 17px;
         }
       }
 
+      /* Id, Pw */
       .input {
         width: 100%;
         height: 40px;
         border-radius: 5px;
-        border: 2px solid var(--main-color);
-        background-color: var(--bg-color);
-        box-shadow: 4px 4px var(--main-color);
+        border: 2px solid black;
+        background-color: var(--ivory);
+        box-shadow: 4px 4px black;
         font-size: 15px;
         font-weight: 600;
-        color: var(--font-color);
         padding: 5px 10px;
         outline: none;
 
         &::placeholder {
-          color: var(--font-color-sub);
+          color: var(--font-light);
           opacity: 0.8;
         }
 
         &:focus {
-          border: 2px solid var(--input-focus);
+          border: 2px solid var(--focus);
         }
       }
 
+      /* Sign up */
       .sign-up {
         width: 100%;
         text-align: right;
@@ -84,35 +92,18 @@
           padding: 10px 10px;
           color: black;
           text-decoration: underline;
+
+          &:hover {
+            color: var(--focus);
+          }
         }
       }
 
-      .button-confirm {
+      /* Confirm Button */
+      .confirm-btn {
         margin: 20px auto 0 auto;
-        width: 120px;
-        height: 40px;
-        border-radius: 5px;
-        border: 2px solid var(--main-color);
-        background-color: var(--bg-color);
-        box-shadow: 4px 4px var(--main-color);
-        font-size: 17px;
-        font-weight: 600;
-        color: var(--font-color);
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        &:hover {
-          background-color: white;
-          color: black;
-          border: 2px solid black;
-          box-shadow: 5px 5px 0px black;
-        }
-
-        &:active {
-          background-color: white;
-          box-shadow: none;
-          transform: translateY(4px);
-        }
+        padding: 8px 40px;
+        @include ivory-btn;
       }
     }
   }
