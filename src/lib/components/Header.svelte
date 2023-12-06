@@ -1,10 +1,12 @@
 <script lang="ts">
     import clickOutside from "$lib/ts/clickOutside";
+    import MessengerModal from "$lib/components/MessengerModal.svelte";
     import {fly} from 'svelte/transition';
 
     export let isLogin: boolean; // 로그인 버튼 표시
     let clickUser = false; // 유저 메뉴 표시
     let clickNotification = false; // 알림 메뉴 표시
+    let clickMessenger = false; // 메신저 메뉴 표시
 </script>
 
 <div class="header">
@@ -33,11 +35,14 @@
                 <div class="right-menu">
                     <!-- Messenger -->
                     <div class="messenger">
-                        <button class="messenger-btn">
+                        <button class="messenger-btn" on:click={() => clickMessenger = !clickMessenger}>
                             <img src="/messenger.png" alt="" width="30" height="30">
                         </button>
                     </div>
                     <!-- //Messenger -->
+
+                    <MessengerModal bind:clickMessenger/>
+
 
                     <!-- Notification -->
                     <div class="notification" use:clickOutside={() => clickNotification = false}>

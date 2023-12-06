@@ -3,7 +3,6 @@
     import {fly} from 'svelte/transition';
     import clickOutside from "$lib/ts/clickOutside";
 
-
     let whichBoard = true; // 구인 게시판(true), 질문 게시판(false) 선택
     let clickSort = false; // 정렬 메뉴 표시
 </script>

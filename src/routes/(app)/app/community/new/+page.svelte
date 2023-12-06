@@ -2,7 +2,8 @@
     <div class="right">
         <form class="create-form">
             <div class="form-title">
-                <h2>게시글 생성</h2>
+                <h2>게시글 작성</h2>
+                프로젝트 팀원을 모집하거나 궁금한 것을 질문해보세요!
             </div>
             <div class="category">
                 <label for="boards">게시판 종류</label>
