@@ -5,7 +5,7 @@
 
     export let isLogin: boolean; // 로그인 버튼 표시
     let clickUser = false; // 유저 메뉴 표시
-    let clickNotification = false; // 알림 메뉴 표시
+    let clickNotification = false; // 알림 메뉴 표n시
     let clickMessenger = false; // 메신저 메뉴 표시
 </script>
 
@@ -98,11 +98,11 @@
                         {#if clickUser}
                             <div class="user-menu" transition:fly={{duration: 200}}>
                                 <ul>
-                                    <li>소개 프로필</li>
-                                    <li>회원 정보</li>
-                                    <li>활동 내역</li>
-                                    <li>친구</li>
-                                    <li>고객센터</li>
+                                    <li><a href="/app/settings/profile">소개 프로필</a></li>
+                                    <li><a href="/app/settings/account">회원 정보</a></li>
+                                    <li><a href="/app/settings/activity">활동 내역</a></li>
+                                    <li><a href="/app/settings/friend">친구</a></li>
+                                    <li><a href="/app/settings/service">고객센터</a></li>
                                     <li class="logout">로그아웃</li>
                                 </ul>
                             </div>
@@ -197,7 +197,7 @@
               box-shadow: 1px 1px 0 var(--border-color);
               padding: 10px 20px;
               color: var(--font-light);
-              font-weight: 600;
+              //font-weight: 600;
 
               ul li {
                 padding: 10px 18px;
@@ -207,7 +207,11 @@
                   padding: 15px 18px;
                 }
 
-                &:hover {
+                a {
+                  color: black;
+                }
+
+                a:hover {
                   color: var(--focus);
                   cursor: pointer;
                 }
@@ -251,7 +255,7 @@
               }
 
               ul {
-                height: 200px;
+                height: 300px;
                 overflow: auto;
 
                 li {

@@ -9,15 +9,33 @@
 
     <!-- Content -->
     <div class="content">
-        <slot/>
+        <div class="inner-content">
+            <slot/>
+        </div>
     </div>
     <!-- //Content -->
+
+    <!-- Footer -->
+    <div class="footer"></div>
+    <!-- //Footer -->
 </div>
 
-<style>
-    /* Content */
-    .content {
-        /* navbar 상단 고정했기 때문에 */
-        margin-top: 80px;
+<style lang="scss">
+  /* Content */
+  .content {
+    /* navbar 상단 고정했기 때문에 */
+    margin-top: 80px;
+
+    .inner-content {
+      padding: 30px 0;
+      width: 70%;
+      margin: 0 auto;
+      min-height: calc(100vh - 80px);
     }
+  }
+
+  /* Footer */
+  .footer {
+    @include footer;
+  }
 </style>
