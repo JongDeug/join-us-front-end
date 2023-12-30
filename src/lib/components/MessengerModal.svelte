@@ -1,10 +1,21 @@
 <script>
+    import Options from "$lib/components/Options.svelte";
+
     export let clickMessenger; // 메신저 메뉴 표시
 
     let dialog; // HTMLDialogElement
 
     $: if (dialog && clickMessenger) dialog.showModal();
-    $: console.log(clickMessenger)
+
+
+    // 옵션
+    let selected = "send";
+    const options = [
+        {title: '보낸 쪽지', value: 'send'},
+        {title: '받은 쪽지', value: 'receive'}
+    ]
+
+    $: console.log(selected);
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
@@ -22,20 +33,12 @@
             </button>
         </div>
 
-        <hr/>
-        <div>
-            본문
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium dolorem eaque ex iusto
-            labore laboriosam modi molestias mollitia, necessitatibus, quae recusandae sit sunt, tempora vitae.
-            Accusantium eveniet omnis similique?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolore et ipsa magni pariatur quam quod,
-            rerum unde? Asperiores aspernatur delectus eius eligendi fugiat illum laboriosam nemo repellendus sequi
-            temporibus.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur cumque cupiditate, deserunt
-            doloremque ex quam quis voluptatibus! Doloremque eaque ex harum illum iure molestiae quasi suscipit.
-            Laboriosam, minus, similique!
+        <div class="content">
+            <div class="div-select">
+                <Options bind:selected {options}/>
+            </div>
+
         </div>
-        <hr/>
         <!-- svelte-ignore a11y-autofocus -->
         <!-- <button autofocus on:click={() => dialog.close()}>close modal</button> -->
     </div>
@@ -70,6 +73,17 @@
 
         .close-btn {
           padding: 0;
+        }
+      }
+
+      .content {
+        border: 1px solid;
+        padding: 5px 0;
+
+        .div-select {
+          display: flex;
+          justify-content: left;
+          margin-bottom: 30px;
         }
       }
     }
