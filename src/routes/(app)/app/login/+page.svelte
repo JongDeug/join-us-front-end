@@ -1,9 +1,9 @@
 <form class="login-form">
-    <div class="title">Login</div>
+    <div class="title">로그인</div>
     <div class="greeting">Welcome,<br><span>have a nice day 😁</span></div>
     <input class="input" name="id" placeholder="Id" type="id">
     <input class="input" name="password" placeholder="Password" type="password">
-    <div class="sign-up">
+    <div class="signup">
         <a href="#">아이디가 없으신가요?</a>
     </div>
     <button class="confirm-btn">확인</button>
@@ -14,6 +14,19 @@
 
   .login-form {
     margin: 100px auto 0 auto;
+    padding: 20px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    //align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-radius: 5px;
+    border: 2px solid black;
+    box-shadow: 4px 4px black;
+    width: 600px;
+
     /* Title */
     .title {
       width: 100%;
@@ -25,18 +38,6 @@
       //color: #323232;
     }
 
-    padding: 20px;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    //align-items: center;
-    justify-content: center;
-    gap: 20px;
-    border-radius: 5px;
-    border: 2px solid black;
-    box-shadow: 4px 4px black;
-    width: 500px;
 
     /* Greeting */
     .greeting {
@@ -54,7 +55,7 @@
     /* Id, Pw */
     .input {
       width: 100%;
-      height: 40px;
+      height: 50px;
       border-radius: 5px;
       border: 2px solid black;
       background-color: var(--ivory);
@@ -75,7 +76,7 @@
     }
 
     /* Sign up */
-    .sign-up {
+    .signup {
       width: 100%;
       text-align: right;
       margin-top: 10px;

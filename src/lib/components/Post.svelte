@@ -35,10 +35,12 @@
             #뭐 #야 #이 #거
         </div>
 
-        <div class="views-and-likes">
+        <div class="tiny-info">
             <img src="/views.png" alt="" width="20" height="20">
             <span>32</span>
             <img src="/likes.png" alt="" width="20" height="20">
+            <span>32</span>
+            <img src="/comments.png" alt="" width="20" height="20">
             <span>32</span>
         </div>
     </div>
@@ -108,7 +110,7 @@
         color: var(--focus);
       }
 
-      .views-and-likes {
+      .tiny-info {
         display: flex;
         font-size: 15px;
         //justify-content: space-around;

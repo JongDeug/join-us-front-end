@@ -1,17 +1,18 @@
 <script>
     import Header from "$lib/components/Header.svelte";
+
+    /** @type {import('./$types').LayoutData} */
+    export let data;
 </script>
 
 <div class="wrapper">
     <!-- Navbar -->
-    <Header isLogin={true}/>
+    <Header isLogin={true} sections={data.sections}/>
     <!-- //Navbar -->
 
     <!-- Content -->
     <div class="content">
-        <div class="inner-content">
-            <slot/>
-        </div>
+        <slot/>
     </div>
     <!-- //Content -->
 
@@ -24,14 +25,10 @@
   /* Content */
   .content {
     /* navbar 상단 고정했기 때문에 */
-    margin-top: 80px;
-
-    .inner-content {
-      padding: 30px 0;
-      width: 70%;
-      margin: 0 auto;
-      min-height: calc(100vh - 80px);
-    }
+    padding: 30px 0;
+    width: 70%;
+    margin: 80px auto 0 auto;
+    min-height: calc(100vh - 80px);
   }
 
   /* Footer */

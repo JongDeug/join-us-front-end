@@ -1,18 +1,19 @@
+<script>
+    import Options from "$lib/components/Options.svelte";
+
+    let selected = "recent";
+    const options = [
+        {title: '최근 접속', value: 'recent'},
+        {title: '내가 만든 공간', value: 'hand-made'},
+    ]
+
+    $: console.log(selected);
+</script>
+
 <div class="spaces">
     <div class="top">
-        <div class="select">
-            <div class="option">
-                <input class="input" type="radio" name="btn" value="option1" checked>
-                <div class="btn">
-                    <span class="span">최근 접속</span>
-                </div>
-            </div>
-            <div class="option">
-                <input class="input" type="radio" name="btn" value="option2">
-                <div class="btn">
-                    <span class="span">내가 만든 공간</span>
-                </div>
-            </div>
+        <div class="div-select">
+            <Options bind:selected {options}/>
         </div>
 
         <!-- Search -->
@@ -39,57 +40,8 @@
       display: flex;
       justify-content: flex-end;
 
-      .select {
+      .div-select {
         margin-right: 20px;
-        position: relative;
-        width: 260px;
-        height: 36px;
-        background-color: var(--ivory);
-        border: 2px solid var(--font-light);
-        border-radius: 34px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        box-shadow: 4px 4px var(--font-light);
-
-        .option {
-          //width: 80.5px;
-          width: 45%;
-          height: 28px;
-          position: relative;
-          top: 2px;
-          left: 2px;
-
-          .input {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            appearance: none;
-            cursor: pointer;
-          }
-
-          .input:checked + .btn {
-            background-color: var(--font-light);
-
-            span {
-              color: white;
-            }
-          }
-
-          .btn {
-            width: 100%;
-            height: 100%;
-            background-color: var(--ivory);
-            border-radius: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-          }
-        }
-
       }
 
       /* Search */

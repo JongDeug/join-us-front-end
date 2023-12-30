@@ -4,6 +4,7 @@
     import {fly} from 'svelte/transition';
 
     export let isLogin: boolean; // 로그인 버튼 표시
+    export let sections; // 메뉴 섹션
     let clickUser = false; // 유저 메뉴 표시
     let clickNotification = false; // 알림 메뉴 표n시
     let clickMessenger = false; // 메신저 메뉴 표시
@@ -98,12 +99,20 @@
                         {#if clickUser}
                             <div class="user-menu" transition:fly={{duration: 200}}>
                                 <ul>
-                                    <li><a href="/app/settings/profile">소개 프로필</a></li>
-                                    <li><a href="/app/settings/account">회원 정보</a></li>
-                                    <li><a href="/app/settings/activity">활동 내역</a></li>
-                                    <li><a href="/app/settings/friend">친구</a></li>
-                                    <li><a href="/app/settings/service">고객센터</a></li>
-                                    <li class="logout">로그아웃</li>
+                                    {#each sections as section}
+                                        <li>
+                                            <a href="/app/settings/{section.slug}">
+                                                <img src="/{section.slug}.png" alt="" width="20" height="20">
+                                                {section.title}
+                                            </a>
+                                        </li>
+                                    {/each}
+                                    <li class="logout">
+                                        <button>
+                                            <img src="/logout.png" alt="" width="20" height="20">
+                                            <span>로그아웃</span>
+                                        </button>
+                                    </li>
                                 </ul>
                             </div>
                         {/if}
@@ -117,10 +126,11 @@
             {#if !isLogin}
                 <div class="left-menu">
                     <ul class="left-menu_ul">
-                        <li><a href="#">커뮤니티</a></li>
+                        <li><a href="/app">커뮤니티</a></li>
                     </ul>
                 </div>
-                <a href="#" class="login-btn">로그인</a>
+                <a href="/app/login" class="login-btn">로그인</a>
+                <a href="/app/signup" class="signup-btn">회원가입</a>
             {/if}
         </div>
         <!-- //Menu -->
@@ -192,23 +202,38 @@
               margin-top: 10px;
               top: 100%;
               right: 0;
-              width: 200px;
+              width: 250px;
               background-color: white;
               box-shadow: 1px 1px 0 var(--border-color);
-              padding: 10px 20px;
+              padding: 25px 20px;
               color: var(--font-light);
               //font-weight: 600;
 
               ul li {
-                padding: 10px 18px;
+                margin: 10px;
 
                 &:last-child {
                   border-top: 1px solid var(--border-color);
-                  padding: 15px 18px;
+                }
+
+                button {
+                  border: 0;
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  width: 100%;
+                  background-color: white;
+                  padding: 5px;
+                  margin-top: 10px;
+                  cursor: pointer;
                 }
 
                 a {
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
                   color: black;
+                  padding: 5px;
                 }
 
                 a:hover {
@@ -295,9 +320,17 @@
 
         /* isLogin = false */
         .login-btn {
-          padding: 10px 20px;
+          padding: 7px 15px;
           margin-left: 10px;
           @include orange-btn;
+        }
+
+        .signup-btn {
+          padding: 7px 15px;
+          margin-left: 10px;
+          @include orange-btn;
+          background-color: var(--ivory) !important;
+          color: black !important;
         }
       }
     }

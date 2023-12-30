@@ -103,8 +103,8 @@
           padding: 10px 30px;
           margin-right: 10px;
           @include orange-btn;
-          background-color: white;
-          color: black;
+          background-color: white !important;
+          color: black !important;
         }
 
         .confirm-btn {
