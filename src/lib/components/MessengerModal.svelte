@@ -1,5 +1,7 @@
 <script>
     import Options from "$lib/components/Options.svelte";
+    import {page} from "$app/stores";
+    import Pagination from "$lib/components/Pagination.svelte";
 
     export let clickMessenger; // 메신저 메뉴 표시
 
@@ -7,14 +9,9 @@
 
     $: if (dialog && clickMessenger) dialog.showModal();
 
-
     // 옵션
-    let selected = "send";
-    const options = [
-        {title: '보낸 쪽지', value: 'send'},
-        {title: '받은 쪽지', value: 'receive'}
-    ]
-
+    let selected = "write";
+    let options = $page.data.options.messenger;
     $: console.log(selected);
 </script>
 
@@ -37,6 +34,44 @@
             <div class="div-select">
                 <Options bind:selected {options}/>
             </div>
+
+            <table class="table">
+                <tr>
+                    <th class="table-h1"><input type="checkbox"></th>
+                    <th class="table-h2">번호</th>
+                    <th class="table-h3">보낸사람</th>
+                    <th class="table-h4">내용</th>
+                    <th>일시</th>
+                </tr>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <td>1</td>
+                    <td>Maria Anders</td>
+                    <td>Germany slkdjfa;lkdsfja;dslkfjas;lkfdjsad;flk</td>
+                    <td>2023-12-31</td>
+                </tr>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <td>2</td>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Changsdflksajdfalskdfj</td>
+                    <td>2023-12-31</td>
+                </tr>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <td>3</td>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Changsdflksajdfalskdfj</td>
+                    <td>2023-12-31</td>
+                </tr>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <td>3</td>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Changsdflksajdfalskdfj</td>
+                    <td>2023-12-31</td>
+                </tr>
+            </table>
 
         </div>
         <!-- svelte-ignore a11y-autofocus -->
@@ -77,7 +112,6 @@
       }
 
       .content {
-        border: 1px solid;
         padding: 5px 0;
 
         .div-select {
@@ -85,10 +119,28 @@
           justify-content: left;
           margin-bottom: 30px;
         }
+
+        .table {
+          width: 100%;
+
+          &-h3 {
+            width: 30%;
+          }
+
+          &-h4 {
+            width: 40%;
+          }
+        }
+      }
+
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px 8px;
       }
     }
-
   }
+
 
   @keyframes zoom {
     from {

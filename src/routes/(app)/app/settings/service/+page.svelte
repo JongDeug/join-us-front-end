@@ -11,21 +11,27 @@
 </script>
 
 <div class="wrapper">
+    <!-- Title -->
     <div class="title">
         <h3>고객센터</h3>
     </div>
+    <!-- //Title -->
 
-   <div class="div-select">
-       <Options bind:selected {options}/>
-   </div>
+    <!-- Select -->
+    <div class="div-select">
+        <Options bind:selected {options}/>
+    </div>
+    <!-- //Select -->
 </div>
 
 <style lang="scss">
   .wrapper {
+    /* Title */
     .title {
       margin-bottom: 30px;
     }
 
+    /* Select */
     .div-select {
       display: flex;
       justify-content: right;

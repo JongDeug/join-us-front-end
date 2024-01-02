@@ -1,25 +1,25 @@
-<form class="login-form">
-    <div class="title">로그인</div>
-    <div class="greeting">Welcome,<br><span>have a nice day 😁</span></div>
-    <input class="input" name="id" placeholder="Id" type="id">
-    <input class="input" name="password" placeholder="Password" type="password">
-    <div class="signup">
-        <a href="#">아이디가 없으신가요?</a>
+<!-- Form -->
+<form class="form">
+    <div class="form-greeting"><h2>로그인</h2><br><span>JoinUs에 오신것을 환영합니다. 😁</span></div>
+    <input class="form-input" name="id" placeholder="Id" type="id">
+    <input class="form-input" name="password" placeholder="Password" type="password">
+    <div class="form-signup">
+        <a href="/app/signup">아이디가 없으신가요?</a>
     </div>
-    <button class="confirm-btn">확인</button>
+    <button class="form-confirmBtn">확인</button>
 </form>
+<!-- //Form -->
 
 
 <style lang="scss">
-
-  .login-form {
+  /* Form */
+  .form {
     margin: 100px auto 0 auto;
     padding: 20px;
-    background: white;
+    background: lightblue;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    //align-items: center;
     justify-content: center;
     gap: 30px;
     border-radius: 5px;
@@ -27,20 +27,18 @@
     box-shadow: 4px 4px black;
     width: 600px;
 
-    /* Title */
-    .title {
+    /* Form Title */
+    &-title {
       width: 100%;
       text-align: center;
       font-size: 40px;
       font-weight: 600;
       text-decoration: underline;
       margin-bottom: 10px;
-      //color: #323232;
     }
 
-
     /* Greeting */
-    .greeting {
+    &-greeting {
       font-weight: 900;
       font-size: 20px;
       margin-bottom: 25px;
@@ -52,8 +50,8 @@
       }
     }
 
-    /* Id, Pw */
-    .input {
+    /* Input Tag */
+    &-input {
       width: 100%;
       height: 50px;
       border-radius: 5px;
@@ -76,7 +74,7 @@
     }
 
     /* Sign up */
-    .signup {
+    &-signup {
       width: 100%;
       text-align: right;
       margin-top: 10px;
@@ -93,7 +91,7 @@
     }
 
     /* Confirm Button */
-    .confirm-btn {
+    &-confirmBtn {
       margin: 20px auto 0 auto;
       padding: 8px 40px;
       @include ivory-btn;

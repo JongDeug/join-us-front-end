@@ -4,11 +4,15 @@
 </script>
 
 <div class="wrapper">
-    <div class="form-title">
-        <h3>회원 정보</h3>
-    </div>
-
+    <!-- Account Form -->
     <form class="account-form" action="">
+        <!-- Account Form Title -->
+        <div class="account-form-title">
+            <h3>회원 정보</h3>
+        </div>
+        <!-- //Account Form Title -->
+
+        <!-- Account Form Input -->
         <div class="input-div">
             <label for="id">아이디</label>
             <input class="input" name="id" placeholder="Id" type="id" id="id">
@@ -34,49 +38,62 @@
             <label for="nickname">닉네임</label>
             <input class="input" name="nickname" placeholder="Nickname" type="nickname" id="nickname">
         </div>
-        <div class="btn-div">
+        <!-- //Account Form Input -->
+
+        <!-- Edit Button -->
+        <div class="editBtn-div">
             <button class="edit-btn">수정</button>
         </div>
+        <!-- //Edit Button -->
     </form>
+    <!-- //Account Form -->
 
-
-    <div class="delete">
-        <div class="delete-title">
+    <!-- Delete Account -->
+    <div class="delete-account">
+        <!-- Delete Account Title -->
+        <div class="delete-account-title">
             <h3>계정삭제</h3>
         </div>
+        <!-- //Delete Account Title -->
 
-        <div class="delete-div">
+        <!-- Delete Account Content -->
+        <div class="delete-account-div">
+            <!-- Delete Account CheckBox -->
             <div class="checkbox">
                 <input
                         type="checkbox"
-                        id="subscribeNews"
+                        id="delete"
                         name="subscribe"
                         value="newsletter"
                         bind:checked={deleteCheckbox}
                 />
-                <label for="subscribeNews">정말 계정을 삭제하시겠습니까?</label>
+                <label for="delete">정말 계정을 삭제하시겠습니까?</label>
             </div>
+            <!-- //Delete Account CheckBox -->
 
+            <!-- Delete Account Button -->
             <button class:checked={deleteCheckbox}>회원탈퇴</button>
+            <!-- //Delete Account Button -->
         </div>
+        <!-- //Delete Account Content -->
     </div>
 </div>
 
 <style lang="scss">
   .wrapper {
-
-
-    .form-title {
-      margin-bottom: 30px;
-    }
-
-
+    /* Account Form */
     .account-form {
       width: 70%;
       padding-bottom: 20px;
       margin-bottom: 10px;
-      border-bottom: 1px solid;
+      border-bottom: 2px solid var(--border-color);
 
+      /* Account Form Title */
+      &-title {
+        margin-bottom: 30px !important;
+      }
+
+      /* Account Form Input */
       .input-div {
         margin-bottom: 30px;
 
@@ -94,7 +111,8 @@
         }
       }
 
-      .btn-div {
+      /* Edit Button */
+      .editBtn-div {
         display: flex;
         width: 100%;
         justify-content: right;
@@ -106,19 +124,22 @@
       }
     }
 
-
-    .delete {
+    /* Delete Account */
+    .delete-account {
       width: 70%;
 
+      /* Delete Account Title */
       &-title {
         margin: 30px 0;
       }
 
+      /* Delete Account Content */
       &-div {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
+        /* Delete Account Checkbox */
         .checkbox {
           padding: 6px;
 
@@ -128,6 +149,7 @@
           }
         }
 
+        /* Delete Account Button */
         button {
           border-radius: 5px;
           padding: 10px 20px;

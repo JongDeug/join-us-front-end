@@ -24,7 +24,6 @@
 <style lang="scss">
   /* Content */
   .content {
-    /* navbar 상단 고정했기 때문에 */
     padding: 30px 0;
     width: 70%;
     margin: 80px auto 0 auto;

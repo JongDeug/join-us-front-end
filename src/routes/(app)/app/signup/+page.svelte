@@ -1,43 +1,45 @@
-<form class="signup-form">
-    <div class="title">회원가입</div>
-    <div class="greeting">Welcome,<br><span>have a nice day 😁</span></div>
-    <div class="input-div">
+<!-- Form -->
+<form class="form">
+<!--    <div class="form-title">JoinUs에 오신것을 환영합니</div>-->
+    <div class="form-greeting"><h2>회원가입</h2><br><span>JoinUs에 오신것을 환영합니다. 😁</span></div>
+    <div class="form-input">
         <label for="id">아이디</label>
-        <input class="input" name="id" placeholder="Id" type="id" id="id">
+        <input name="id" placeholder="Id" type="id" id="id">
     </div>
-    <div class="input-div">
+    <div class="form-input">
         <label for="password">비밀번호</label>
-        <input class="input" name="password" placeholder="Password" type="password" id="password">
+        <input name="password" placeholder="Password" type="password" id="password">
     </div>
-    <div class="input-div">
+    <div class="form-input">
         <label for="password-check">비밀번호 확인</label>
-        <input class="input" name="password-check" placeholder="Password" type="password-check" id="password-check">
+        <input name="password-check" placeholder="Password" type="password-check"
+               id="password-check">
     </div>
-    <div class="input-div">
+    <div class="form-input">
         <label for="email">이메일</label>
-        <input class="input" name="email" placeholder="Email" type="email" id="email">
+        <input name="email" placeholder="Email" type="email" id="email">
     </div>
-    <div class="input-div">
+    <div class="form-input">
         <label for="name">이름</label>
-        <input class="input" name="name" placeholder="Name" type="name" id="name">
+        <input name="name" placeholder="Name" type="name" id="name">
     </div>
-    <div class="input-div">
+    <div class="form-input">
         <label for="nickname">닉네임</label>
-        <input class="input" name="nickname" placeholder="Nickname" type="nickname" id="nickname">
-        <div class="login">
-            <a href="#">이미 회원이신가요?</a>
-        </div>
+        <input name="nickname" placeholder="Nickname" type="nickname" id="nickname">
+    </div>
+    <div class="form-login">
+        <a href="/app/login">이미 회원이신가요?</a>
     </div>
     <button class="confirm-btn">확인</button>
 </form>
-
+<!-- //Form -->
 
 <style lang="scss">
-
-  .signup-form {
+  /* Form */
+  .form {
     margin: 100px auto 100px auto;
     padding: 20px;
-    background: white;
+    background: lightblue;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -48,19 +50,24 @@
     box-shadow: 4px 4px black;
     width: 600px;
 
-    /* Title */
-    .title {
+    label {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* Form Title */
+    &-title {
       width: 100%;
       text-align: center;
       font-size: 40px;
       font-weight: 600;
-      text-decoration: underline;
+      //text-decoration: underline;
       margin-bottom: 10px;
       //color: #323232;
     }
 
     /* Greeting */
-    .greeting {
+    &-greeting {
       font-weight: 900;
       font-size: 20px;
       margin-bottom: 25px;
@@ -72,18 +79,9 @@
       }
     }
 
-    .input-div {
-      //margin-bottom: 25px;
+    /* Input Tag */
+    &-input {
       width: 100%;
-
-      &:last-child {
-        margin: 0;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 6px;
-      }
 
       input {
         width: 100%;
@@ -109,10 +107,10 @@
     }
 
     /* Login */
-    .login {
+    &-login {
       width: 100%;
       text-align: right;
-      margin-top: 20px;
+      margin-top: 10px;
 
       a {
         padding: 10px 10px;
@@ -127,8 +125,7 @@
 
     /* Confirm Button */
     .confirm-btn {
-      //margin: 20px auto 0 auto;
-      margin: 0 auto;
+      margin: 20px auto 0 auto;
       padding: 8px 40px;
       @include ivory-btn;
     }

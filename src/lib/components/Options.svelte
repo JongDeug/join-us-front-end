@@ -3,10 +3,11 @@
     export let selected;
 
 </script>
+
 <div class="select">
     {#each options as option}
         <div class="option">
-            <input class="input" type="radio" name="btn" value={option.value} bind:group={selected}>
+            <input class="input" type="radio" value={option.value} bind:group={selected}>
             <div class="btn">
                 <span class="span">{option.title}</span>
             </div>
