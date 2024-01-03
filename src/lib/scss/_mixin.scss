@@ -55,31 +55,6 @@
 //
 //}
 
-// 좋아요 싫어요 버튼
-@mixin likes {
-  position: sticky;
-  top: 80px;
-  height: 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-
-  span {
-    font-size: 24px;
-  }
-
-  button {
-    padding: 0;
-    margin: 0;
-    background-color: white;
-    border: 0;
-  }
-
-  .arrow-down {
-    margin-top: 3px;
-  }
-}
 
 //Footer 디자인
 @mixin footer {

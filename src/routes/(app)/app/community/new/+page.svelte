@@ -1,47 +1,39 @@
 <div class="wrapper">
-    <div class="commercial">
-
+    <div class="commercial-content">
     </div>
 
-    <!-- Main -->
-    <div class="main">
+    <div class="main-content">
         <!-- Title -->
-        <div class="main-title">
+        <div class="main-content__title">
             <h2>게시글 작성</h2>
             프로젝트 팀원을 모집하거나 궁금한 것을 질문해보세요!
         </div>
-        <!-- //Title -->
 
-        <!-- Form -->
-        <form class="form">
-            <div class="form-category">
-                <label for="boards">게시판 종류</label>
-                <select name="" id="boards">
+        <!-- Board Form -->
+        <div class="main-content__board-form">
+            <form class="board-form">
+                <label class="board-form__label" for="boards">게시판 종류</label>
+                <select class="board-form__select" name="" id="boards">
                     <option value="구인 게시판">구인 게시판</option>
                     <option value="질문 게시판">질문 게시판</option>
                 </select>
-            </div>
-            <div>
-                <label for="title">제목</label>
-                <input class="form-input" type="text" id="title">
-            </div>
-            <div>
-                <label for="tag">태그</label>
-                <input class="form-input" type="text" id="">
-            </div>
-            <div class="form-content">
-                <label for="">본문</label>
-                <div class="content-container">
+
+                <label class="board-form__label" for="title">제목</label>
+                <input class="board-form__input" type="text" id="title">
+
+                <label class="board-form__label" for="tag">태그</label>
+                <input class="board-form__input" type="text" id="">
+
+                <label class="board-form__label" for="">본문</label>
+                <textarea class="board-form__textarea"></textarea>
+
+                <div class="row">
+                    <a href="/app/" class="board-form__btn board-form__btn--color-white">취소</a>
+                    <button class="board-form__btn board-form__btn--color-orange">등록</button>
                 </div>
-            </div>
-            <div class="form-btn">
-                <a href="/app/" class="cancel-btn">취소</a>
-                <button class="confirm-btn">등록</button>
-            </div>
-        </form>
-        <!-- //Form -->
+            </form>
+        </div>
     </div>
-    <!-- //Main -->
 </div>
 
 <style lang="scss">
@@ -49,75 +41,62 @@
     display: flex;
     gap: 150px;
 
-    /* Main */
-    .main {
+    .main-content {
       width: 100%;
 
-      /* Title */
-      &-title {
+      &__title {
         margin-bottom: 50px;
       }
 
-      /* Form */
-      .form {
-        label {
-          display: block;
-          margin-bottom: 6px;
-        }
+      //&__board-form {}
+    }
+  }
 
-        div {
-          margin-bottom: 30px;
-        }
+  //-------------------------------------------------------
 
-        /* Post Category */
-        &-category {
-          select {
-            width: 100%;
-            border-radius: 5px;
-            border: 1px solid var(--border-color);
-            box-shadow: 1px 1px 0 var(--border-color);
-            padding: 12px 10px;
-          }
-        }
+  /* Board Form */
+  .board-form {
+    display: flex;
+    flex-direction: column;
 
-        &-input {
-          width: 100%;
-          border-radius: 5px;
-          border: 1px solid var(--border-color);
-          box-shadow: 1px 1px 0 var(--border-color);
-          padding: 12px 10px;
-        }
+    &__label {
+      display: block;
+      margin-bottom: 6px;
+    }
 
-        /* Post Content */
-        &-content {
-          .content-container {
-            height: 300px;
-            border: 1px solid var(--border-color);
-            border-radius: 5px;
-            margin-bottom: 30px;
-          }
-        }
+    &__input, &__select, &__textarea {
+      margin-bottom: 30px;
+      border-radius: 5px;
+      border: 1px solid var(--border-color);
+      box-shadow: 1px 1px 0 var(--border-color);
+      padding: 12px 10px;
+    }
 
-        /* Buttons */
-        &-btn {
-          display: flex;
-          justify-content: end;
-          margin-bottom: 0 !important;
+    &__textarea {
+      height: 300px;
+      resize: none;
+    }
 
-          .cancel-btn {
-            padding: 10px 30px;
-            margin-right: 10px;
-            @include orange-btn;
-            background-color: white !important;
-            color: black !important;
-          }
+    .row {
+      display: flex;
+      justify-content: end;
+      margin-bottom: 0 !important;
+    }
 
-          .confirm-btn {
-            padding: 10px 30px;
-            @include orange-btn;
-          }
-        }
+    &__btn {
+      padding: 10px 30px;
+
+      &--color-white {
+        margin-right: 10px;
+        @include orange-btn;
+        background-color: white !important;
+        color: black !important;
+      }
+
+      &--color-orange {
+        @include orange-btn;
       }
     }
   }
+
 </style>

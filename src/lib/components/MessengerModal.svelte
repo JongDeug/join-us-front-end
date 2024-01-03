@@ -1,5 +1,5 @@
 <script>
-    import Options from "$lib/components/Options.svelte";
+    import Options from "$lib/components/Tab.svelte";
     import {page} from "$app/stores";
     import Pagination from "$lib/components/Pagination.svelte";
 

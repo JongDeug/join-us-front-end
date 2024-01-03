@@ -1,5 +1,7 @@
 <script>
-    import Options from "$lib/components/Options.svelte";
+    import Options from "$lib/components/Tab.svelte";
+    import Pagination from "$lib/components/Pagination.svelte";
+    import Friend from "$lib/components/Friend.svelte";
 
     let selected = "ask";
     const options = [
@@ -11,31 +13,45 @@
 </script>
 
 <div class="wrapper">
-    <!-- Title -->
-    <div class="title">
-        <h3>고객센터</h3>
-    </div>
-    <!-- //Title -->
+    <div class="main-content">
+        <div class="main-content__title">
+            <!-- Title -->
+            <div class="title">
+                <h3>고객센터</h3>
+            </div>
+            <!-- //Title -->
+        </div>
 
-    <!-- Select -->
-    <div class="div-select">
-        <Options bind:selected {options}/>
+        <div class="main-content__select">
+            <Options bind:selected {options}/>
+        </div>
+
+
     </div>
-    <!-- //Select -->
 </div>
 
+
 <style lang="scss">
+
+  /* Layout */
   .wrapper {
-    /* Title */
-    .title {
-      margin-bottom: 30px;
+    .main-content {
+      //&__title {}
+
+      &__select {
+        display: flex;
+        justify-content: right;
+        margin-bottom: 30px;
+      }
     }
 
-    /* Select */
-    .div-select {
-      display: flex;
-      justify-content: right;
-      margin-bottom: 30px;
-    }
   }
+
+  //-------------------------------------------------------
+
+  /* Title */
+  .title {
+    margin-bottom: 30px;
+  }
+
 </style>

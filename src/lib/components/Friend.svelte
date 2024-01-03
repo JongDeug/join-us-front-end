@@ -1,39 +1,36 @@
-<div class="wrapper">
-    <div class="div-left">
+<div class="friend">
+    <div class="col1">
         <img src="/user.png" alt="" width="70" height="70">
-        <div class="div-description">
+        <div class="friend__description">
             <p>닉네임</p>
             <p>인삿말 입니다만?</p>
         </div>
     </div>
-    <div class="div-right">
-        <button>팔로우</button>
-    </div>
+
+    <button class="friend__btn">팔로우</button>
 </div>
 
 <style lang="scss">
-  .wrapper {
+  .friend {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 17px 0;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid var(--border-color);
 
-    .div-left {
+    .col1 {
       display: flex;
       align-items: center;
-
-      .div-description {
-        margin-left: 10px;
-      }
     }
 
-    .div-right {
-      button {
-        padding: 7px;
-        border-radius: 5px;
-        background-color: var(--ivory);
-      }
+    &__description {
+      margin-left: 10px;
+    }
+
+    &__btn {
+      padding: 7px;
+      border-radius: 5px;
+      background-color: var(--ivory);
     }
   }
 </style>

@@ -1,8 +1,8 @@
 <script>
-    import Options from "$lib/components/Options.svelte";
     import Friend from "$lib/components/Friend.svelte";
     import Pagination from "$lib/components/Pagination.svelte";
     import {page} from "$app/stores";
+    import Tab from "$lib/components/Tab.svelte";
 
     let selected = "followers";
     let options = $page.data.options.friend;
@@ -11,47 +11,45 @@
 </script>
 
 <div class="wrapper">
-    <!-- Title -->
-    <div class="title">
-        <h3>친구</h3>
-    </div>
-    <!-- //Title -->
+    <div class="main-content">
+        <!-- Title -->
+        <div class="main-content__title">
+            <h3>친구</h3>
+        </div>
 
-    <!-- Select -->
-    <div class="div-select">
-        <Options bind:selected {options}/>
-    </div>
-    <!-- //Select -->
+        <!-- Tab -->
+        <div class="main-content__tab">
+            <Tab bind:selected {options}/>
+        </div>
 
-    {#if selected == "followers"}
-        <!-- 팔로워 -->
-        <Friend/>
-        <Friend/>
-        <Friend/>
-        <Friend/>
-        <Pagination/>
-        <!-- //팔로워 -->
-    {:else if selected == "following"}
-        <!-- 팔로잉 -->
-        <Friend/>
-        <Friend/>
-        <Pagination/>
-        <!-- //팔로잉 -->
-    {/if}
+        {#if selected == "followers"}
+            <!-- Followers -->
+            <Friend/>
+            <Friend/>
+            <Friend/>
+            <Friend/>
+            <Pagination/>
+        {:else if selected == "following"}
+            <!-- Following -->
+            <Friend/>
+            <Friend/>
+            <Pagination/>
+        {/if}
+    </div>
 </div>
 
 <style lang="scss">
   .wrapper {
-    /* Title */
-    .title {
-      margin-bottom: 30px;
-    }
+    .main-content {
+      &__title {
+        margin-bottom: 30px;
+      }
 
-    /* Select */
-    .div-select {
-      display: flex;
-      justify-content: right;
-      margin-bottom: 30px;
+      &__tab {
+        display: flex;
+        justify-content: right;
+        margin-bottom: 30px;
+      }
     }
   }
 </style>
