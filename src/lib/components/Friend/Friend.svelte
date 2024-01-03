@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <button class="friend__btn">팔로우</button>
+    <button class="friend__btn">언팔로우</button>
 </div>
 
 <style lang="scss">
