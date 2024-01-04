@@ -1,47 +1,58 @@
 <script>
+    import DeleteAccount from "$lib/components/DeleteAccount.svelte";
+    import Identification from "$lib/components/Identification.svelte";
 
-import DeleteAccount from "$lib/components/DeleteAccount.svelte";
+    let identification = true;
 </script>
 
 <div class="wrapper">
     <div class="main-content">
-        <!-- Account Form -->
-        <div class="main-content__account-form">
-            <form class="account-form" action="">
-                <div class="account-form__title">
-                    <h3>회원 정보</h3>
-                </div>
 
-                <label class="account-form__label" for="id">아이디</label>
-                <input class="account-form__input" name="id" placeholder="Id" type="id" id="id">
+        {#if identification}
+            <!-- Account Form -->
+            <div class="main-content__account-form">
+                <form class="account-form" action="">
+                    <div class="account-form__title">
+                        <h3>회원 정보</h3>
+                    </div>
 
-                <label class="account-form__label" for="password">비밀번호</label>
-                <input class="account-form__input" name="password" placeholder="Password" type="password" id="password">
+                    <label class="account-form__label" for="id">아이디</label>
+                    <input class="account-form__input" name="id" placeholder="Id" type="id" id="id">
 
-                <label class="account-form__label" for="password-check">비밀번호 확인</label>
-                <input class="account-form__input" name="password-check" placeholder="Password" type="password-check"
-                       id="password-check">
+                    <label class="account-form__label" for="password">비밀번호</label>
+                    <input class="account-form__input" name="password" placeholder="Password" type="password"
+                           id="password">
 
-                <label class="account-form__label" for="email">이메일</label>
-                <input class="account-form__input" name="email" placeholder="Email" type="email" id="email">
+                    <label class="account-form__label" for="password-check">비밀번호 확인</label>
+                    <input class="account-form__input" name="password-check" placeholder="Password"
+                           type="password-check"
+                           id="password-check">
 
-                <label class="account-form__label" for="name">이름</label>
-                <input class="account-form__input" name="name" placeholder="Name" type="name" id="name">
+                    <label class="account-form__label" for="email">이메일</label>
+                    <input class="account-form__input" name="email" placeholder="Email" type="email" id="email">
 
-                <label class="account-form__label" for="nickname">닉네임</label>
-                <input class="account-form__input" name="nickname" placeholder="Nickname" type="nickname" id="nickname">
+                    <label class="account-form__label" for="name">이름</label>
+                    <input class="account-form__input" name="name" placeholder="Name" type="name" id="name">
 
-                <div class="row">
-                    <button class="account-form__btn">수정</button>
-                </div>
-            </form>
-            <!-- //Account Form -->
-        </div>
+                    <label class="account-form__label" for="nickname">닉네임</label>
+                    <input class="account-form__input" name="nickname" placeholder="Nickname" type="nickname"
+                           id="nickname">
 
-        <!-- Delete Account -->
-        <div class="main-content__delete-account">
-            <DeleteAccount/>
-        </div>
+                    <div class="row">
+                        <button class="account-form__btn">수정</button>
+                    </div>
+                </form>
+                <!-- //Account Form -->
+            </div>
+
+            <!-- Delete Account -->
+            <div class="main-content__delete-account">
+                <DeleteAccount/>
+            </div>
+
+        {:else}
+            <Identification/>
+        {/if}
     </div>
 </div>
 

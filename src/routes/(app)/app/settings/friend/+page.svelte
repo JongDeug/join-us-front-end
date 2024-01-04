@@ -1,54 +1,34 @@
 <script>
-    import Friend from "$lib/components/Friend.svelte";
+    import Friend from "$lib/components/Friend/Friend.svelte";
     import Pagination from "$lib/components/Pagination.svelte";
     import {page} from "$app/stores";
     import Tab from "$lib/components/Tab.svelte";
+    import FriendList from "$lib/components/Friend/FriendList.svelte";
+    import FriendRequest from "$lib/components/Friend/FriendRequest.svelte";
 
-    let selected = "followers";
-    let options = $page.data.options.friend;
 
-    $: console.log(selected);
 </script>
 
 <div class="wrapper">
     <div class="main-content">
-        <!-- Title -->
-        <div class="main-content__title">
-            <h3>친구</h3>
+        <!-- Friend List -->
+        <div class="main-content__friend-list">
+            <FriendList/>
         </div>
 
-        <!-- Tab -->
-        <div class="main-content__tab">
-            <Tab bind:selected {options}/>
+        <!-- Friend Request -->
+        <div class="main-content__friend-request">
+            <FriendRequest/>
         </div>
-
-        {#if selected == "followers"}
-            <!-- Followers -->
-            <Friend/>
-            <Friend/>
-            <Friend/>
-            <Friend/>
-            <Pagination/>
-        {:else if selected == "following"}
-            <!-- Following -->
-            <Friend/>
-            <Friend/>
-            <Pagination/>
-        {/if}
     </div>
 </div>
 
 <style lang="scss">
   .wrapper {
     .main-content {
-      &__title {
-        margin-bottom: 30px;
-      }
-
-      &__tab {
-        display: flex;
-        justify-content: right;
-        margin-bottom: 30px;
+      &__friend-list {
+        padding-bottom: 100px;
+        border-bottom: 2px solid var(--border-color);
       }
     }
   }

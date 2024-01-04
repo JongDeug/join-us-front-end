@@ -36,7 +36,7 @@
         <input class="signup-form__input" name="nickname" placeholder="Nickname" type="nickname" id="nickname">
     </div>
 
-    <a class="signup-form__link" href="/app/login">이미 회원이신가요?</a>
+    <a class="signup-form__link" href="/app/login">[로그인]</a>
     <button class="signup-form__btn">확인</button>
 </form>
 <!-- //Signup Form -->
@@ -107,6 +107,7 @@
       padding: 10px 10px;
       color: black;
       text-decoration: underline;
+      font-size: 18px;
 
       &:hover {
         color: var(--focus);

@@ -1,7 +1,7 @@
 <script>
-    import Options from "$lib/components/Tab.svelte";
     import {page} from "$app/stores";
     import Pagination from "$lib/components/Pagination.svelte";
+    import Tab from "$lib/components/Tab.svelte";
 
     export let clickMessenger; // 메신저 메뉴 표시
 
@@ -32,7 +32,7 @@
 
         <div class="content">
             <div class="div-select">
-                <Options bind:selected {options}/>
+                <Tab bind:selected {options}/>
             </div>
 
             <table class="table">

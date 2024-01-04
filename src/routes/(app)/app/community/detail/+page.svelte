@@ -3,6 +3,7 @@
     import Introduce from "$lib/components/Introduce.svelte";
     import LikeButton from "$lib/components/LikeButton.svelte";
     import PostInfo from "$lib/components/Post/PostInfo.svelte";
+    import PostSettings from "$lib/components/Post/PostSettings.svelte";
 
     let whichBoard = true; // 구인 게시판(true), 질문 게시판(false) 선택
 </script>
@@ -24,10 +25,8 @@
                     <!-- Post Info -->
                     <PostInfo/>
 
-                    <!-- Setting Button -->
-                    <button class="setting-btn">
-                        <img src="/menu.png" alt="" width="30" height="30">
-                    </button>
+                    <!-- Post Settings -->
+                    <PostSettings/>
                 </div>
 
                 <div class="row row2">
@@ -220,15 +219,6 @@
   }
 
   //-------------------------------------------------------
-
-  /* Setting Button */
-  .setting-btn {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    background-color: white;
-    cursor: pointer;
-  }
 
   /* Post Tag */
   .post-tag {

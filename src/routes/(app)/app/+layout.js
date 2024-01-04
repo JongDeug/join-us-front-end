@@ -8,7 +8,6 @@ export function load({url}) {
             {slug: 'account', title: '회원 정보', which: slug[3]},
             {slug: 'activity', title: '활동 내역', which: slug[3]},
             {slug: 'friend', title: '친구', which: slug[3]},
-            {slug: 'service', title: '고객센터', which: slug[3]},
         ],
         options: {
             messenger: [

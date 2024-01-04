@@ -1,10 +1,11 @@
 <script>
     import {fly} from 'svelte/transition';
     import clickOutside from "$lib/ts/clickOutside";
+
     export let clickSort;
 </script>
 
-<div class="sort"  use:clickOutside={() => clickSort = false}>
+<div class="sort" use:clickOutside={() => clickSort = false}>
     <!--                            특정 영역 제외 클릭 시 닫기-->
     <button class="sort__btn" on:click={() => clickSort = !clickSort}>
         <img src="/sort.png" alt="" width="16" height="16">
@@ -67,6 +68,7 @@
     &__item {
       cursor: pointer;
       margin-bottom: 13px;
+      text-align: center;
 
       &:hover {
         color: var(--focus)

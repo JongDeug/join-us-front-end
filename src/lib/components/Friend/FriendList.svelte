@@ -1,7 +1,7 @@
 <script>
     import Tab from "$lib/components/Tab.svelte";
     import Pagination from "$lib/components/Pagination.svelte";
-    import Friend from "$lib/components/Friend.svelte";
+    import Friend from "$lib/components/Friend/Friend.svelte";
     import {page} from "$app/stores";
 
     let selected = "followers";
