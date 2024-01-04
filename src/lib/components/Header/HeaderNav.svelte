@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 180px;
+    gap: 20px;
 
     &__link {
       color: black;
