@@ -6,7 +6,6 @@
     import FriendList from "$lib/components/Friend/FriendList.svelte";
     import FriendRequest from "$lib/components/Friend/FriendRequest.svelte";
 
-
 </script>
 
 <div class="wrapper">
@@ -15,21 +14,12 @@
         <div class="main-content__friend-list">
             <FriendList/>
         </div>
-
-        <!-- Friend Request -->
-        <div class="main-content__friend-request">
-            <FriendRequest/>
-        </div>
     </div>
 </div>
 
 <style lang="scss">
   .wrapper {
     .main-content {
-      &__friend-list {
-        padding-bottom: 100px;
-        border-bottom: 2px solid var(--border-color);
-      }
     }
   }
 </style>

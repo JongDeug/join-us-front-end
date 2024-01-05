@@ -3,6 +3,7 @@
     import Pagination from "$lib/components/Pagination.svelte";
     import Friend from "$lib/components/Friend/Friend.svelte";
     import {page} from "$app/stores";
+    import FriendRequest from "$lib/components/Friend/FriendRequest.svelte";
 
     let selected = "followers";
     let options = $page.data.options.friend;
@@ -29,6 +30,8 @@
         <Friend/>
         <Friend/>
         <Pagination/>
+    {:else if selected == "followRequest"}
+        <FriendRequest/>
     {/if}
 </div>
 

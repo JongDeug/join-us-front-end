@@ -1,5 +1,5 @@
 <script>
-    import Messenger from "$lib/components/Header/Messenger.svelte";
+    import Messenger from "$lib/components/Header/Messenger/Messenger.svelte";
     import Notification from "$lib/components/Header/Notification.svelte";
     import User from "$lib/components/Header/User.svelte";
 

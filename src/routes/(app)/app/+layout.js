@@ -12,8 +12,9 @@ export function load({url}) {
         options: {
             messenger: [
                 {title: '쪽지쓰기', value: 'write'},
+                {title: '받은쪽지함', value: 'receive'},
                 {title: '보낸쪽지함', value: 'send'},
-                {title: '받은쪽지함', value: 'receive'}
+                {title: '휴지통', value: 'trash'},
             ],
             spaces: [
                 {title: '최근 접속', value: 'recent'},
@@ -26,7 +27,8 @@ export function load({url}) {
             ],
             friend: [
                 {title: '팔로워', value: 'followers'},
-                {title: '팔로잉', value: 'following'}
+                {title: '팔로잉', value: 'following'},
+                {title: '팔로우 요청', value: 'followRequest'}
             ]
         }
 

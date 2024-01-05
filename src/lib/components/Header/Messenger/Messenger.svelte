@@ -1,5 +1,5 @@
 <script>
-    import MessengerModal from "$lib/components/Header/MessengerModal.svelte";
+    import MessengerModal from "$lib/components/Header/Messenger/MessengerModal.svelte";
 
     let clickMessenger = false; // 메신저 메뉴 표시
 </script>

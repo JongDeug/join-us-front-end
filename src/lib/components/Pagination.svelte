@@ -68,7 +68,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 8px;
+      //margin: 1px;
       cursor: pointer;
     }
 
@@ -80,7 +80,7 @@
     &__item {
       width: 45px;
       height: 45px;
-      border-radius: 0.4rem;
+      border-radius: 10px;
 
       &:hover {
         color: orange;

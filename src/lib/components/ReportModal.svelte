@@ -75,6 +75,7 @@
     width: 35%;
     border-radius: 5px;
     margin: 80px auto;
+    border: 0;
 
     &__inner {
       padding: 20px;

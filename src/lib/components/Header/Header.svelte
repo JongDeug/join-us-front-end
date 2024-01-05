@@ -1,5 +1,5 @@
 <script lang="ts">
-    import MessengerModal from "$lib/components/Header/MessengerModal.svelte";
+    import MessengerModal from "$lib/components/Header/Messenger/MessengerModal.svelte";
     import Logo from "$lib/components/Header/Logo.svelte";
     import HeaderNav from "$lib/components/Header/HeaderNav.svelte";
     import HeaderMenu from "$lib/components/Header/HeaderMenu.svelte";
